@@ -67,8 +67,9 @@ export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProp
           }
         }}
       />
-      <div className="flex justify-between gap-2 mt-4">
+      <div className="flex justify-between mt-4">
         <ColumnSelectInput columnId={columnId} onChange={handleColumnChange} />
+        <div className="w-full border-b"></div>
         <button className="modal__button" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>

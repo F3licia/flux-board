@@ -48,8 +48,8 @@ export function ColumnSelectInput({ columnId, onChange }: Props) {
           className="custom-select__dropdown">
           {columns.filter((column) => column.id !== selectedColumn?.id)
             .map((column) => (
-              <div className="custom-select__wrapper">
-                <button className="custom-select"
+              <div className="custom-select__wrapper test">
+                <button className="custom-select__option"
                   onClick={() => handleSelect(column.id)}
                   key={column.id}
                 >

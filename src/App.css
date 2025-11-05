@@ -2,13 +2,10 @@
 
 #root {
   max-width: 100vw;
-  margin: 0 auto;
-  text-align: center;
 }
 
 button:focus {
   outline: none;
-  border: none;
 }
 
 .main-board {
@@ -36,7 +33,7 @@ button:focus {
 }
 
 .column__header__button {
-  @apply p-2 bg-black hover:bg-white text-white hover:text-black border border-black rounded-none focus:border focus:border-black hover:border-black;
+  @apply p-2 bg-black hover:bg-white text-white hover:text-black border border-black rounded-none focus:border hover:border hover:border-black;
 }
 
 .column__content {
@@ -110,7 +107,7 @@ button:focus {
 }
 
 .modal__button {
-  @apply border rounded-none border-black bg-white px-2 py-1 focus:border-black hover:border-black;
+  @apply border rounded-none border-black bg-white px-2 py-1 focus:border-black hover:border-black hover:bg-black hover:text-white;
 }
 
 .modal__text-input {
@@ -125,13 +122,18 @@ button:focus {
   @apply border border-black;
 }
 
-.custom-select {
+.custom-select,
+.custom-select__option {
   @apply relative px-2 py-1 text-left rounded-none bg-white border-none overflow-hidden min-w-[130px] max-w-[130px];
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
 
+.custom-select__option {
+  @apply hover:bg-black hover:text-white;
+}
+
 .custom-select__dropdown {
-  @apply absolute top-[99%] left-0;
+  @apply absolute top-[100%] left-0;
 }
