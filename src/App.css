@@ -1,42 +1,137 @@
+@import "tailwindcss";
+
 #root {
-  max-width: 1280px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button:focus {
+  outline: none;
+  border: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-board {
+  @apply flex flex-col md:flex-row gap-4 overflow-x-auto min-h-[100dvh] min-w-screen p-8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.column {
+  @apply border p-4 bg-white md:w-72 flex-shrink-0 flex flex-col transition-all;
 }
 
-.card {
-  padding: 2em;
+/* .column--enlighten {
+  @apply border-2 border-color-x bg-color-x;
+} */
+
+.column__header {
+  @apply w-full p-2 bg-black text-white;
 }
 
-.read-the-docs {
-  color: #888;
+.column__header__label {
+  @apply leading-[1] text-[8px];
+}
+
+.column__header__title {
+  @apply px-4 my-2 text-left bg-black text-white w-fit;
+}
+
+.column__header__button {
+  @apply p-2 bg-black hover:bg-white text-white hover:text-black border border-black rounded-none focus:border focus:border-black hover:border-black;
+}
+
+.column__content {
+  @apply flex md:flex-col overflow-x-auto h-full gap-4 border p-3 pt-4 mb-8;
+  --s: 20px;
+  --c: black;
+  /*idk if I'll manage the theme change. */
+
+  border: 1.5px solid var(--c);
+  border-radius: 0px;
+  clip-path: polygon(0 0,
+      calc(100% - var(--s)) 0,
+      100% var(--s),
+      100% 100%,
+      0 100%);
+  background: linear-gradient(-135deg, var(--c) calc(0.707*var(--s) + 1px), #0000 0) border-box;
+  background-color: white;
+}
+
+.task-card {
+  @apply flex max-h-[68px] min-w-[90%] max-w-[90%] md:min-w-full md:max-w-full border;
+}
+
+.task-card__paragraph {
+  @apply border overflow-hidden px-2 text-left text-base/5 flex-grow;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.task-card__button-group {
+  @apply flex flex-col self-end;
+}
+
+.task-card__button-group__button {
+  @apply p-2 active:p-2 bg-white hover:bg-black text-black hover:text-white border border-black hover:border-black rounded-none focus:rounded-none active:rounded-none;
+}
+
+.column__add-task {
+  @apply flex justify-between rounded-none bg-white p-0 border-none focus:border-none hover:border-none;
+  ;
+}
+
+.column__add-task__label {
+  @apply bg-black text-white px-4;
+}
+
+.main-board__add-column {
+  @apply p-0 flex flex-col bg-white border border-black rounded-none focus:border-black hover:border-black focus:border;
+
+}
+
+.main-board__add-column__label {
+  @apply md:[writing-mode:sideways-lr] md:[text-orientation:mixed] md:pt-4;
+}
+
+.modal__bg {
+  @apply bg-black/50;
+}
+
+.modal {
+  @apply relative rounded-none border bg-white;
+}
+
+.modal__title {
+  @apply max-w-fit bg-black text-white px-2 py-1 mb-4;
+}
+
+.modal__close-button {
+  @apply border rounded-none border-black bg-white p-1 border-t-0 border-r-0 text-xl font-semibold focus:border-black hover:border-black hover:bg-black hover:text-white;
+}
+
+.modal__button {
+  @apply border rounded-none border-black bg-white px-2 py-1 focus:border-black hover:border-black;
+}
+
+.modal__text-input {
+  @apply outline-none border border-black rounded-none w-full px-2 py-1;
+}
+
+.column-select {
+  @apply relative border-black focus:border-black hover:border-black focus:outline-none appearance-none cursor-pointer
+}
+
+.custom-select__wrapper {
+  @apply border border-black;
+}
+
+.custom-select {
+  @apply relative px-2 py-1 text-left rounded-none bg-white border-none overflow-hidden min-w-[130px] max-w-[130px];
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.custom-select__dropdown {
+  @apply absolute top-[99%] left-0;
 }
