@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { modalActions } from "../../features/modal/modalSlice";
 import { useAppDispatch, useAppSelector } from "../../utils/reduxHooks";
@@ -7,11 +6,14 @@ import { UpdateTaskForm } from "../column/taskcard/UpdateTaskForm";
 import { AddColumnForm } from "../column/AddColumnForm";
 import { RenameColumnForm } from "../column/RenameColumnForm";
 import { AddTaskForm } from "../column/AddTaskForm";
+import { useBlockScroll } from "../../hooks/useBlockScroll";
 
 export function Modal() {
   const dispatch = useAppDispatch();
   const { isOpen, modalType, data } = useAppSelector((state) => state.modal);
   const { columnId, taskId, content } = data || {};
+
+  useBlockScroll(isOpen);
 
   let toRender = null;
   if (modalType === 'update-task') {
@@ -23,17 +25,6 @@ export function Modal() {
   } else if (modalType === 'add-task') {
     toRender = <AddTaskForm columnId={columnId!} />
   }
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
 
   if (!isOpen) return null;
 

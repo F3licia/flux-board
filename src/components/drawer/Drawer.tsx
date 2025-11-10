@@ -2,9 +2,13 @@ import { useState } from "react";
 import { DrawerContent } from "./DrawerContent";
 import { DrawerMobileToggle } from "./DrawerMobileToggle";
 import { DrawerDesktopToggle } from "./DrawerDesktopToggle";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { useBlockScroll } from "../../hooks/useBlockScroll";
 
 export function Drawer() {
   const [isOpen, setIsOpen] = useState(true);
+  const isMobile = useIsMobile();
+  useBlockScroll(isOpen && isMobile);
 
   return (
     <>
