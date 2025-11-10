@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../utils/reduxHooks";
 import { kanbanActions } from "../../../features/kanban/kanbanSlice";
 import { modalActions } from "../../../features/modal/modalSlice";
 import { ColumnSelectInput } from "./ColumnSelectInput";
+import { BsArrow90DegRight } from "react-icons/bs";
 
 interface UpdateTaskFormProps {
   columnId: string;
@@ -69,6 +70,9 @@ export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProp
       />
       <div className="flex justify-between mt-4">
         <ColumnSelectInput columnId={columnId} onChange={handleColumnChange} />
+        <div className="relative">
+          <BsArrow90DegRight className="absolute top-0 right-[-20px] text-black text-size-l rotate-90" />
+        </div>
         <div className="w-full border-b"></div>
         <button className="modal__button" onClick={handleSubmit}>Confirm</button>
       </div>
