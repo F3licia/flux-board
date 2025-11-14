@@ -1,4 +1,6 @@
 import { BsAsterisk } from "react-icons/bs";
+import frame from './images/frame.png';
+import codebar from './images/codebar.png';
 
 export function DrawerContent() {
 
@@ -16,7 +18,7 @@ export function DrawerContent() {
 
   const description = <div className="self-end text-black text-xs text-justify w-[200px]">
     <div className="frame-wrapper mb-1">
-      <img width={200} src="/images/codebar.png" />
+      <img width={200} src={codebar} />
     </div>
     Single-page application designed to practice global state management using the Redux library. The Kanban board states are managed globally, while data persistence is handled through the browser's localStorage
   </div>;
@@ -28,7 +30,7 @@ export function DrawerContent() {
       {description}
 
       <div className="frame-wrapper absolute bottom-4 md:bottom-9 ">
-        <img height={140} width={140} src="/images/frame.png" />
+        <img height={140} width={140} src={frame} />
       </div>
     </div>
   );
