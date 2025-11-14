@@ -38,7 +38,7 @@ export function RenameColumnForm({ columnId, content }: RenameColumnFormProps) {
         }}
       />
       <div className="flex justify-end mt-4">
-        <div className="w-full border-b"></div>
+        <div className="w-full border-b border-black"></div>
         <button className="modal__button" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>

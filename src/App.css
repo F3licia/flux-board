@@ -25,7 +25,7 @@ button:focus {
 }
 
 .column__header__label {
-  @apply leading-[1] text-[8px];
+  @apply text-black leading-[1] text-[8px];
 }
 
 .column__header__title {
@@ -107,11 +107,11 @@ button:focus {
 }
 
 .modal__button {
-  @apply border rounded-none border-black bg-white px-2 py-1 focus:border-black hover:border-black hover:bg-black hover:text-white;
+  @apply border rounded-none border-black hover:border-black bg-white hover:bg-black px-2 py-1 focus:border-black text-black hover:text-white;
 }
 
 .modal__text-input {
-  @apply outline-none border border-black rounded-none w-full px-2 py-1;
+  @apply text-black outline-none border border-black rounded-none w-full px-2 py-1;
 }
 
 .column-select {
@@ -124,14 +124,14 @@ button:focus {
 
 .custom-select,
 .custom-select__option {
-  @apply relative px-2 py-1 text-left rounded-none bg-white border-none overflow-hidden min-w-[130px] max-w-[130px];
+  @apply text-black relative px-2 py-1 text-left rounded-none bg-white border-none overflow-hidden min-w-[130px] max-w-[130px];
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
 
 .custom-select__option {
-  @apply hover:bg-black hover:text-white;
+  @apply text-black hover:bg-black hover:text-white;
 }
 
 .custom-select__dropdown {

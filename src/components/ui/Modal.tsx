@@ -37,7 +37,7 @@ export function Modal() {
         <button
           onClick={() => dispatch(modalActions.closeModal())}
           className="absolute right-0 top-0 modal__close-button"
-        ><BsX />
+        ><BsX className="text-black hover:text-white" />
         </button>
         {toRender}
       </div>
