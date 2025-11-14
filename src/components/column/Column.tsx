@@ -76,10 +76,10 @@ export function Column({ columnId, title, tasks }: Props) {
 
       <button className='column__add-task'
         onClick={handleAddTask} >
-        <div className='leading-[-1]'>ADD</div>
+        <div className='leading-[-1] text-black'>ADD</div>
         <div className="column__add-task__label">+</div>
       </button>
-      <div className="w-full border-b"></div>
+      <div className="w-full border-b border-black"></div>
     </div >
   );
 }

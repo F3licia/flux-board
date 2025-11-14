@@ -28,7 +28,7 @@ const ColumnHeader: React.FC<Props> = ({ columnTitle, actions }) => {
           ))}
         </span>
       </div>
-      <div className='border-t border-b margin-t-[1px]'>
+      <div className='border-t border-b border-black margin-t-[1px]'>
         <h2 className="column__header__title text-xl font-semibold">{columnTitle}</h2>
       </div>
     </div>
