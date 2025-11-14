@@ -47,12 +47,13 @@ export function Column({ columnId, title, tasks }: Props) {
     e.preventDefault();
     setIsOver(false);
     const data = e.dataTransfer.getData("text/plain");
-    if (!data) return; const { taskId, sourceColId } = JSON.parse(data);
+    if (!data) return; const { sourceColId } = JSON.parse(data);
     dispatch(kanbanActions.moveTask({ sourceColId, destColId: columnId, sourceIndex: 0, destIndex: tasks.length }));
   };
 
   return (
-    <div className='column'
+    <div
+      className={`column ${isOver ? 'column--enlighten' : ''}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}>
