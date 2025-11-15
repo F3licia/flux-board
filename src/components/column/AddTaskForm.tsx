@@ -33,12 +33,12 @@ export function AddTaskForm({ columnId }: AddTaskProps) {
             handleSubmit();
           }
         }}
-        className="modal__text-input"
+        className="modal__text-input box"
         placeholder="What will it be?"
       />
       <div className="flex justify-end mt-4">
-        <div className="w-full border-b"></div>
-        <button className="modal__button" onClick={handleSubmit}>Confirm</button>
+        <div className="w-full border-b-def"></div>
+        <button className="modal__button box-hover" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>
   );

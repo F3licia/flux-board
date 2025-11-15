@@ -53,22 +53,22 @@ const TaskCard: React.FC<Props> = ({ taskId, columnId, content, onDragStart }) =
       draggable
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
-      className={`task-card cursor-grab active:cursor-grabbing transition 
+      className={`task-card border-def cursor-grab active:cursor-grabbing transition 
         ${isDragging ? 'opacity-50' : ''}
       `}
     >
-      <p className="task-card__paragraph">{content}</p>
+      <p className="task-card__paragraph text-box border-def">{content}</p>
 
       <div className='task-card__button-group'>
         <button
           onClick={() => handleUpdateTask(taskId)}
-          className="task-card__button-group__button"
+          className="task-card__button-group__button box-hover border-def"
         >
           <BsPencilSquare />
         </button>
         <button
           onClick={() => handleRemoveTask(taskId)}
-          className="task-card__button-group__button"
+          className="task-card__button-group__button box-hover border-def"
         >
           <BsTrash3 />
         </button>

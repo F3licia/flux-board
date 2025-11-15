@@ -29,7 +29,7 @@ const MainBoard: React.FC = () => {
 
       <button
         onClick={handleAddColumn}
-        className="main-board__add-column"
+        className="main-board__add-column box"
       >
         <div className="main-board__add-column__label">ADD +</div>
       </button>

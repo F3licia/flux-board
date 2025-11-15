@@ -37,8 +37,8 @@ export function ColumnSelectInput({ columnId, onChange }: Props) {
       ref={containerRef}
       className="relative">
       {selectedColumn && (
-        <div className="custom-select__wrapper">
-          <button className="custom-select" onClick={() => setIsOpen((prev) => !prev)}>
+        <div className="border-def">
+          <button className="custom-select text-box" onClick={() => setIsOpen((prev) => !prev)}>
             {selectedColumn.title}
           </button></div>
       )}
@@ -48,8 +48,8 @@ export function ColumnSelectInput({ columnId, onChange }: Props) {
           className="custom-select__dropdown">
           {columns.filter((column) => column.id !== selectedColumn?.id)
             .map((column) => (
-              <div className="custom-select__wrapper test">
-                <button className="custom-select__option"
+              <div className="border-y-def border-b-def">
+                <button className="custom-select__option text-box-hover"
                   onClick={() => handleSelect(column.id)}
                   key={column.id}
                 >

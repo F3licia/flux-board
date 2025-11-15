@@ -1,43 +1,106 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------- */
+/* COMPONENT UTILITIES (Tailwind 4 richiede @layer) */
+/* ------------------------------------------------------- */
+
+@layer components {
+  .box {
+    @apply rounded-none bg-white text-black border border-black hover:border-black focus:rounded-none active:rounded-none;
+  }
+
+  .box-hover {
+    @apply rounded-none bg-white hover:bg-black text-black hover:text-white border border-black hover:border-black focus:rounded-none active:rounded-none;
+  }
+
+  .negative-box {
+    @apply rounded-none bg-black text-white border border-black hover:border-black focus:rounded-none active:rounded-none;
+  }
+
+  .negative-box-hover {
+    @apply rounded-none bg-black hover:bg-white text-white hover:text-black border border-black hover:border-black focus:rounded-none active:rounded-none;
+  }
+
+  .text-box {
+    @apply bg-white text-black;
+  }
+
+  .text-box-hover {
+    @apply bg-white hover:bg-black text-black hover:text-white;
+  }
+
+  .negative-text-box {
+    @apply bg-black text-white;
+  }
+
+  .border-def {
+    @apply border border-black;
+  }
+
+  .border-t-def {
+    @apply border-t border-black;
+  }
+
+  .border-b-def {
+    @apply border-b border-black;
+  }
+
+  .border-x-def {
+    @apply border-t border-b border-black;
+  }
+
+  .border-y-def {
+    @apply border-l border-r border-black;
+  }
+}
+
+/* ------------------------------------------------------- */
+/* BASE & RESET */
+/* ------------------------------------------------------- */
+
 #root {
   max-width: 100vw;
 }
 
-button:focus {
-  outline: none;
+button {
+  padding: 0;
+  cursor: pointer;
 }
+
+/* ------------------------------------------------------- */
+/* MAIN LAYOUT */
+/* ------------------------------------------------------- */
 
 .main-board {
-  @apply p-4 md:p-8 flex flex-col md:flex-row gap-4 overflow-x-auto min-h-[100dvh] min-w-screen;
+  @apply p-4 pt-24 md:p-8 md:pr-18 flex flex-col md:flex-row gap-4 overflow-x-auto min-h-[100dvh] min-w-screen;
 }
 
+/* ------------------------------------------------------- */
+/* COLUMN */
+/* ------------------------------------------------------- */
+
 .column {
-  @apply border p-4 bg-white md:w-72 flex-shrink-0 flex flex-col transition-all;
+  @apply p-4 md:w-72 flex-shrink-0 flex flex-col transition-all;
 }
 
 /* .column--enlighten {
   @apply border-2 border-color-x bg-color-x;
 } */
 
-.column__header {
-  @apply w-full p-2 bg-black text-white;
-}
-
 .column__header__label {
-  @apply text-black leading-[1] text-[8px];
+  @apply leading-[1] text-[8px];
 }
 
 .column__header__title {
-  @apply px-4 my-2 text-left bg-black text-white w-fit;
+  @apply px-4 my-2 text-left w-fit;
 }
 
 .column__header__button {
-  @apply p-2 bg-black hover:bg-white text-white hover:text-black border border-black rounded-none focus:border hover:border hover:border-black;
+  @apply p-2;
 }
 
 .column__content {
-  @apply flex md:flex-col overflow-x-auto h-full gap-4 border p-3 pt-4 mb-8;
+  @apply flex md:flex-col overflow-x-auto h-full gap-4 p-3 pt-4 mb-8;
   --s: 20px;
   --c: black;
   /*idk if I'll manage the theme change. */
@@ -53,12 +116,28 @@ button:focus {
   background-color: white;
 }
 
+.column__add-task {
+  @apply flex justify-between;
+}
+
+.main-board__add-column {
+  @apply p-0 flex flex-col;
+}
+
+.main-board__add-column__label {
+  @apply md:[writing-mode:sideways-lr] md:[text-orientation:mixed] md:pt-4 pr-1;
+}
+
+/* ------------------------------------------------------- */
+/* TASK CARD */
+/* ------------------------------------------------------- */
+
 .task-card {
-  @apply flex max-h-[68px] min-w-[90%] max-w-[90%] md:min-w-full md:max-w-full border;
+  @apply flex max-h-[70px] min-w-[90%] max-w-[90%] md:min-w-full md:max-w-full;
 }
 
 .task-card__paragraph {
-  @apply overflow-hidden px-2 text-left text-base/5 flex-grow text-black border border-black;
+  @apply overflow-hidden px-2 text-left text-base/5 flex-grow;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -69,33 +148,15 @@ button:focus {
 }
 
 .task-card__button-group__button {
-  @apply p-2 active:p-2 bg-white hover:bg-black text-black hover:text-white border border-black hover:border-black rounded-none focus:rounded-none active:rounded-none;
+  @apply p-2;
 }
 
-.column__add-task {
-  @apply flex justify-between rounded-none bg-white p-0 border-none focus:border-none hover:border-none;
-  ;
-}
-
-.column__add-task__label {
-  @apply bg-black text-white px-4;
-}
-
-.main-board__add-column {
-  @apply p-0 flex flex-col bg-white border border-black rounded-none focus:border-black hover:border-black focus:border;
-
-}
-
-.main-board__add-column__label {
-  @apply md:[writing-mode:sideways-lr] md:[text-orientation:mixed] md:pt-4 pr-1;
-}
+/* ------------------------------------------------------- */
+/* MODAL */
+/* ------------------------------------------------------- */
 
 .modal__bg {
   @apply bg-black/50;
-}
-
-.modal {
-  @apply relative rounded-none border bg-white;
 }
 
 .modal__title {
@@ -103,44 +164,44 @@ button:focus {
 }
 
 .modal__close-button {
-  @apply border rounded-none border-black bg-white p-1 border-t-0 border-r-0 text-xl font-semibold focus:border-black hover:border-black hover:bg-black hover:text-white;
+  @apply p-1 text-lg border-t-0 border-r-0 font-semibold;
 }
 
 .modal__button {
-  @apply border rounded-none border-black hover:border-black bg-white hover:bg-black px-2 py-1 focus:border-black text-black hover:text-white;
+  @apply px-2 py-1;
 }
 
 .modal__text-input {
-  @apply text-black outline-none border border-black rounded-none w-full px-2 py-1;
+  @apply w-full px-2 py-1 outline-none;
 }
 
-.column-select {
-  @apply relative border-black focus:border-black hover:border-black focus:outline-none appearance-none cursor-pointer
-}
-
-.custom-select__wrapper {
-  @apply border border-black;
-}
+/* ------------------------------------------------------- */
+/* SELECT COMPONENT */
+/* ------------------------------------------------------- */
 
 .custom-select,
 .custom-select__option {
-  @apply text-black relative px-2 py-1 text-left rounded-none bg-white border-none overflow-hidden min-w-[130px] max-w-[130px];
+  @apply relative px-2 py-1 text-left overflow-hidden min-w-[130px] max-w-[130px];
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}
-
-.custom-select__option {
-  @apply text-black hover:bg-black hover:text-white;
 }
 
 .custom-select__dropdown {
   @apply absolute top-[100%] left-0;
 }
 
+/* ------------------------------------------------------- */
+/* FRAME */
+/* ------------------------------------------------------- */
+
 .frame-wrapper {
   @apply min-w-[200px] max-h-[200px];
 }
+
+/* ------------------------------------------------------- */
+/* DRAWER */
+/* ------------------------------------------------------- */
 
 .drawer {
   @apply h-full w-full md:w-[400px] 2xl:w-[500px] p-4 md:p-8 fixed top-0 right-0 z-40 md:pl-0 flex bg-white border md:border-y-0 border-black transition-transform duration-300 ease-in-out;

@@ -4,19 +4,19 @@ import codebar from '../../assets/images/codebar.png';
 
 export function DrawerContent() {
 
-  const label = <div className="flex items-center gap-2 w-full border-t border-b text-xl md:text-2xl font-bold justify-end ">
-    <BsAsterisk className="text-black" />
-    <div className="pr-2 pl-4 bg-black text-white relative">Redux x Kanban</div>
+  const label = <div className="flex items-center gap-2 w-full border-x-def text-xl md:text-2xl font-bold justify-end">
+    <BsAsterisk className="text-box" />
+    <div className="pr-2 pl-4 relative negative-text-box">Redux x Kanban</div>
   </div>;
 
-  const stack = <div className="px-2 flex justify-between border text-xs gap-2">
+  const stack = <div className="px-2 flex justify-between border-def text-xs gap-2">
     <span className="whitespace-nowrap">redux-x-kanban_</span>
     <span className="text-end">
       react + redux/ typeScript/ vite/ tailwind/ react-icons/ uuid/
     </span>
   </div>;
 
-  const description = <div className="self-end text-black text-xs text-justify w-[200px]">
+  const description = <div className="self-end text-xs text-justify w-[200px] text-box">
     <div className="frame-wrapper mb-1">
       <img width={200} src={codebar} />
     </div>

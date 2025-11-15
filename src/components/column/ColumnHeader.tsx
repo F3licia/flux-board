@@ -14,22 +14,22 @@ const ColumnHeader: React.FC<Props> = ({ columnTitle, actions }) => {
   return (
     <div className=" mb-8">
       <div className='flex justify-between items-end'>
-        <span className="column__header__label">column</span>
+        <span className="column__header__label text-box">column</span>
         <span className="flex gap-1">
           {actions?.map((action, index) => (
             <button
               aria-label={action.label}
               key={index}
               onClick={action.onClick}
-              className="column__header__button flex items-center"
+              className="flex items-center"
             >
-              {action.icon}
+              <span className="p-2 negative-box-hover border-b-0 ">{action.icon}</span>
             </button>
           ))}
         </span>
       </div>
-      <div className='border-t border-b border-black margin-t-[1px]'>
-        <h2 className="column__header__title text-xl font-semibold">{columnTitle}</h2>
+      <div className='margin-t-[1px] border-x-def'>
+        <h2 className="column__header__title negative-text-box text-xl font-semibold">{columnTitle}</h2>
       </div>
     </div>
   );

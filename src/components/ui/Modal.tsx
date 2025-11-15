@@ -32,12 +32,12 @@ export function Modal() {
     <div className="modal__bg fixed inset-0 flex items-center justify-center z-50">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="modal p-7 w-full max-w-md text-center"
+        className="box relative p-7 w-full max-w-md text-center"
       >
         <button
           onClick={() => dispatch(modalActions.closeModal())}
-          className="absolute right-0 top-0 modal__close-button"
-        ><BsX className="text-black hover:text-white" />
+          className="absolute right-0 top-0 modal__close-button negative-box-hover"
+        ><BsX />
         </button>
         {toRender}
       </div>

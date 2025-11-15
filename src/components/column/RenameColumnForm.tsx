@@ -28,7 +28,7 @@ export function RenameColumnForm({ columnId, content }: RenameColumnFormProps) {
         type="text"
         value={newTitle}
         onChange={(e) => setNewTitle(e.target.value)}
-        className="modal__text-input"
+        className="modal__text-input box"
         placeholder="Nuovo titolo"
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
@@ -38,8 +38,8 @@ export function RenameColumnForm({ columnId, content }: RenameColumnFormProps) {
         }}
       />
       <div className="flex justify-end mt-4">
-        <div className="w-full border-b border-black"></div>
-        <button className="modal__button" onClick={handleSubmit}>Confirm</button>
+        <div className="w-full border-b-def"></div>
+        <button className="modal__button box-hover" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>
   );

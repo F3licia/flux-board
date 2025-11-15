@@ -24,7 +24,7 @@ export function AddColumnForm() {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="modal__text-input"
+        className="modal__text-input box"
         placeholder="Choose a title"
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
@@ -34,7 +34,7 @@ export function AddColumnForm() {
         }}
       />
       <div className="flex justify-end gap-2 mt-4">
-        <button className="modal__button" onClick={handleSubmit}>Confirm</button>
+        <button className="modal__button box-hover" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>
   );

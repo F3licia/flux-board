@@ -59,7 +59,7 @@ export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProp
       <textarea
         value={newContent}
         onChange={(e) => setNewContent(e.target.value)}
-        className="modal__text-input"
+        className="modal__text-input box"
         placeholder="Contenuto aggiornato"
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
@@ -71,10 +71,10 @@ export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProp
       <div className="flex justify-between mt-4">
         <ColumnSelectInput columnId={columnId} onChange={handleColumnChange} />
         <div className="relative">
-          <BsArrow90DegRight className="absolute top-0 right-[-20px] text-black text-size-l rotate-90" />
+          <BsArrow90DegRight className="absolute top-0 right-[-20px] text-size-l rotate-90 text-box" />
         </div>
-        <div className="w-full border-b"></div>
-        <button className="modal__button" onClick={handleSubmit}>Confirm</button>
+        <div className="w-full border-b-def"></div>
+        <button className="modal__button box-hover" onClick={handleSubmit}>Confirm</button>
       </div>
     </div>
   );

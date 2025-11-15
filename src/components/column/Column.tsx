@@ -53,7 +53,7 @@ export function Column({ columnId, title, tasks }: Props) {
 
   return (
     <div
-      className={`column ${isOver ? 'column--enlighten' : ''}`}
+      className={`column box ${isOver ? 'column--enlighten' : ''}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}>
@@ -76,10 +76,10 @@ export function Column({ columnId, title, tasks }: Props) {
 
       <button className='column__add-task'
         onClick={handleAddTask} >
-        <div className='leading-[-1] text-black'>ADD</div>
-        <div className="column__add-task__label">+</div>
+        <div className='leading-[-1] text-box'>ADD</div>
+        <div className="px-4 negative-text-box negative-text-box">+</div>
       </button>
-      <div className="w-full border-b border-black"></div>
+      <div className="w-full border-b-def"></div>
     </div >
   );
 }
