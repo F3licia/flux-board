@@ -6,11 +6,11 @@ export function DrawerContent() {
 
   const label = <div className="flex items-center gap-2 w-full border-x-def text-xl md:text-2xl font-bold justify-end">
     <BsAsterisk className="text-box" />
-    <div className="pr-2 pl-4 relative negative-text-box">Redux x Kanban</div>
+    <div className="pr-2 pl-4 relative negative-text-box">FluxBoard</div>
   </div>;
 
   const stack = <div className="px-2 flex justify-between border-def text-xs gap-2">
-    <span className="whitespace-nowrap">redux-x-kanban_</span>
+    <span className="whitespace-nowrap">flux-board_</span>
     <span className="text-end">
       react + redux/ typeScript/ vite/ tailwind/ react-icons/ uuid/
     </span>

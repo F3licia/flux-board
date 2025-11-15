@@ -12,7 +12,7 @@ export function DrawerMobileToggle({ isOpen, onToggle }: ToggleTrigger) {
       </div>
       <div className="flex items-center justify-end gap-2 w-full border-x-def text-xl md:text-2xl font-bold ">
         <BsAsterisk className="text-box" />
-        <div className="pr-2 pl-4 relative negative-text-box">Redux x Kanban</div>
+        <div className="pr-2 pl-4 relative negative-text-box">FluxBoard</div>
       </div>
     </div>
   )

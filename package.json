@@ -1,6 +1,6 @@
 {
-  "name": "redux-x-kanban",
-  "homepage": "https://f3licia.github.io/redux-x-kanban/",
+  "name": "flux-board",
+  "homepage": "https://f3licia.github.io/flux-board/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
