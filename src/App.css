@@ -125,7 +125,7 @@ button {
 }
 
 .main-board__add-column__label {
-  @apply md:[writing-mode:sideways-lr] md:[text-orientation:mixed] md:pt-4 pr-1;
+  @apply w-full md:[writing-mode:sideways-lr] md:[text-orientation:mixed] md:pt-4 pr-1;
 }
 
 /* ------------------------------------------------------- */
