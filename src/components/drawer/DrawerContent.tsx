@@ -1,5 +1,4 @@
-import { BsAsterisk } from "react-icons/bs";
-import frame from '../../assets/images/frame.png';
+import { BsAsterisk, BsFolder2Open, BsGithub, BsLinkedin } from "react-icons/bs";
 import codebar from '../../assets/images/codebar.png';
 
 export function DrawerContent() {
@@ -29,8 +28,10 @@ export function DrawerContent() {
       {stack}
       {description}
 
-      <div className="frame-wrapper absolute bottom-4 md:bottom-9 ">
-        <img height={140} width={140} src={frame} />
+      <div className="absolute bottom-4 md:bottom-9 cursor-pointer flex gap-4">
+        <a className="p-1 text-box-hover" href="https://github.com/F3licia/flux-board/" target="_blank"><BsFolder2Open className="text-2xl" /></a>
+        <a className="p-1 text-box-hover" href="https://github.com/F3licia/" target="_blank"><BsGithub className="text-2xl" /></a>
+        <a className="p-1 text-box-hover" href="https://www.linkedin.com/in/felicia-romeo-9b607411b/" target="_blank"><BsLinkedin className="text-2xl" /></a>
       </div>
     </div>
   );
