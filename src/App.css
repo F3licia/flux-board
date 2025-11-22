@@ -156,7 +156,7 @@ button {
 /* ------------------------------------------------------- */
 
 .modal__bg {
-  @apply bg-black/50;
+  @apply fixed inset-0 flex items-center justify-center z-50 max-h-[100dvh] bg-black/50;
 }
 
 .modal__title {

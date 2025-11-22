@@ -29,7 +29,7 @@ export function Modal() {
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="modal__bg fixed inset-0 flex items-center justify-center z-50">
+    <div className="modal__bg">
       <div
         onClick={(e) => e.stopPropagation()}
         className="box relative p-7 w-full max-w-md text-center"
@@ -37,7 +37,7 @@ export function Modal() {
         <button
           onClick={() => dispatch(modalActions.closeModal())}
           className="absolute right-0 top-0 modal__close-button negative-box-hover"
-        ><BsX />
+        ><BsX className="text-xl" />
         </button>
         {toRender}
       </div>
