@@ -4,6 +4,7 @@ import { kanbanActions } from "../../../features/kanban/kanbanSlice";
 import { modalActions } from "../../../features/modal/modalSlice";
 import { ColumnSelectInput } from "./ColumnSelectInput";
 import { BsArrow90DegRight } from "react-icons/bs";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 interface UpdateTaskFormProps {
   columnId: string;
@@ -13,6 +14,7 @@ interface UpdateTaskFormProps {
 
 export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProps) {
   const dispatch = useAppDispatch();
+  const isMobile = useIsMobile();
   const columns = useAppSelector((state) => state.kanban.columns);
   const [newContent, setNewContent] = useState(content);
   const [newColumnId, setNewColumnId] = useState<string | null>(null);
@@ -62,7 +64,7 @@ export function UpdateTaskForm({ columnId, taskId, content }: UpdateTaskFormProp
         className="modal__text-input box"
         placeholder="Contenuto aggiornato"
         onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey) {
+          if (!isMobile && e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             handleSubmit();
           }
