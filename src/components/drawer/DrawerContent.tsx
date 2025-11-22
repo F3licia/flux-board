@@ -20,7 +20,7 @@ export function DrawerContent() {
     <div className="frame-wrapper mb-1">
       <img width={200} src={codebar} />
     </div>
-    Single-page application designed to practice global state management using the Redux library. The Kanban board states are managed globally, while data persistence is handled through the browser's localStorage
+    Single-page application designed to practice global state management using the Redux library. The Kanban board states are managed globally, while data persistence is handled through the browser's localStorage.
   </div>;
 
   return (
