@@ -6,8 +6,8 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import { useBlockScroll } from "../../hooks/useBlockScroll";
 
 export function Drawer() {
-  const [isOpen, setIsOpen] = useState(true);
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState(!isMobile);
   useBlockScroll(isOpen && isMobile);
 
   return (
